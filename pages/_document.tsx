@@ -1,13 +1,24 @@
-import NextDocument, { Html, Head, Main, NextScript } from "next/document"
+import * as React from "react"
+import NextDocument, {
+  Html,
+  Head,
+  Main,
+  NextScript,
+  DocumentContext,
+} from "next/document"
 import { ColorModeScript } from "@chakra-ui/react"
 
-export default class Document extends NextDocument {
+class Document extends NextDocument {
+  static getInitialProps(ctx: DocumentContext) {
+    return NextDocument.getInitialProps(ctx)
+  }
+
   render() {
     return (
-      <Html>
+      <Html lang='en'>
         <Head />
+
         <body>
-          {/* Make Color mode to persists when you refresh the page. */}
           <ColorModeScript />
           <Main />
           <NextScript />
@@ -16,3 +27,5 @@ export default class Document extends NextDocument {
     )
   }
 }
+
+export default Document
