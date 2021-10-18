@@ -37,16 +37,7 @@ const SearchBar = () => {
     dispatch(
       searchAsync({ date, searchString, minPrice, maxPrice, page, sortOrder }),
     )
-  }, [
-    date,
-    dispatch,
-    maxPrice,
-    minPrice,
-    page,
-    router,
-    searchString,
-    sortOrder,
-  ])
+  }, [date, searchString])
 
   return (
     <HStack px='3rem' py='1.5rem' spacing='5rem' bgColor='white' rounded='2xl'>

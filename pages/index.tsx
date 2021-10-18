@@ -68,7 +68,7 @@ const Index = ({ data, variables }) => {
     dispatch(setMaxPrice(variables.maxPrice))
     dispatch(setPage(variables.page))
     dispatch(setSortOrder(variables.orderBy.pricePerQty))
-  }, [data, dispatch, variables])
+  }, [data, variables])
 
   const handleObserver = React.useCallback(
     (entries) => {
@@ -77,7 +77,7 @@ const Index = ({ data, variables }) => {
         dispatch(setPage(page + 1))
       }
     },
-    [dispatch, page],
+    [page],
   )
 
   React.useEffect(() => {
